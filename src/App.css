@@ -62,51 +62,124 @@ body {
 .book-card {
   background: white;
   padding: 24px;
-  border-radius: 12px;
+  border-radius: 16px;
   border: 1px solid #e2e8f0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .book-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: #3b82f6;
+}
+
+.card-content {
+  flex-grow: 1;
+  margin-bottom: 20px;
 }
 
 .book-id {
-  font-family: monospace;
-  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
   color: #94a3b8;
   position: absolute;
   top: 15px;
   right: 15px;
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
 .book-card strong {
-  font-size: 20px;
-  color: #0f172a;
-  margin-bottom: 8px;
+  font-size: 22px;
+  color: #1e293b;
+  margin-bottom: 6px;
   display: block;
+  line-height: 1.2;
 }
 
 .author-name {
-  font-size: 14px;
+  font-size: 15px;
   color: #3b82f6;
-  font-weight: 600;
-  margin: 0 0 15px 0;
+  font-weight: 500;
+  margin: 0 0 16px 0;
+  font-style: italic;
 }
 
 .desc-text {
   font-size: 14px;
-  color: #475569;
+  color: #64748b;
+  line-height: 1.6;
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.card-actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.card-actions button {
+  flex: 1;
+  padding: 8px;
+  font-size: 13px;
+  margin-top: 0;
+}
+
+.edit-btn {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+}
+
+.edit-btn:hover {
+  background-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+.delete-btn {
+  background-color: #fee2e2 !important;
+  color: #ef4444 !important;
+}
+
+.delete-btn:hover {
+  background-color: #fecaca !important;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 40px;
+  background: white;
+  border-radius: 16px;
+  border: 2px dashed #e2e8f0;
+  color: #94a3b8;
+}
+
+.form-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.secondary-btn {
+  background-color: transparent !important;
+  color: #64748b !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.secondary-btn:hover {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
 }
 
 /* Sidebar Area (Right) */

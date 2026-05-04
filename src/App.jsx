@@ -16,6 +16,9 @@ function App() {
     setAuthor('');
     setDescription('');
   }
+  function handleDelete(id) {
+    setBooks(prevBooks => prevBooks.filter(book => book.id !== id));
+  }
 
   return (
     <div className="app-grid">
@@ -32,6 +35,7 @@ function App() {
                 <strong>{book.title}</strong>
                 <p className="author-name">by {book.author}</p>
                 {book.description && <p className="desc-text">{book.description}</p>}
+                <p onClick={() => handleDelete(book.id)} style={{ cursor: "pointer" }}>X</p>
               </div>
             ))
           }
